@@ -1,0 +1,27 @@
+cmake_minimum_required(VERSION 3.10)
+
+# 设置项目名称
+project(file_manager)
+
+# 设置 C++ 标准
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# 设置可执行文件输出路径
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+
+# 设置库文件输出路径
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
+
+
+# 添加可执行文件
+add_executable(file_manager main.cpp)
+
+# include
+target_include_directories(file_manager PUBLIC ${CMAKE_SOURCE_DIR}/logger)
+
+# 添加子目录
+add_subdirectory(logger)
+
+# 添加依赖库
+target_link_libraries(file_manager my_logger)
