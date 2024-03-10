@@ -15,14 +15,12 @@ using std::unique_ptr;
 using std::string;
 class Logger {
 private:
-  Logger();
+  Logger() = default;
   static unique_ptr<Logger> &get_logger_();
   static LoggerLevel logger_level_;
   static void route_(LoggerLevel level, const string& out_content);
 
 public:
-  static void set_logger_level(LoggerLevel level);
-
   static void debug(const string&);
   static void info(const string&);
   static void warn(const string&);

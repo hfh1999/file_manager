@@ -6,6 +6,3 @@ file(GLOB SOURCES "*.cpp")
 
 # 添加库
 add_library(${LOG_LIB} ${SOURCES})
-
-# 如果有依赖的库，可以使用 target_link_libraries 命令链接它们
-# target_link_libraries(${LIBRARY_NAME} ${SOME_LIBRARY})

@@ -7,6 +7,8 @@ project(file_manager)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+enable_testing()
+
 # 设置可执行文件输出路径
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
@@ -14,14 +16,14 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 
 
+include_directories(logger)
+
 # 添加可执行文件
 add_executable(file_manager main.cpp)
 
-# include
-target_include_directories(file_manager PUBLIC ${CMAKE_SOURCE_DIR}/logger)
-
 # 添加子目录
 add_subdirectory(logger)
+add_subdirectory(test)
 
 # 添加依赖库
 target_link_libraries(file_manager my_logger)

@@ -6,6 +6,6 @@
 
 #include "logger/logger.h"
 int main() {
-    Logger::set_logger_level(LoggerLevel::INFO);
+    Logger::set_level(LoggerLevel::INFO);
     Logger::info("Hello world ???");
 }
